@@ -1,0 +1,23 @@
+{
+  "name": "cypressChallenge",
+  "version": "1.0.0",
+  "description": "This repo is meant to reproduce what was done for QA Bootcamp, but using cypress framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SylMoreno/cypressChallenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SylMoreno/cypressChallenge/issues"
+  },
+  "homepage": "https://github.com/SylMoreno/cypressChallenge#readme",
+  "devDependencies": {
+    "cypress": "^9.4.1"
+  }
+}
