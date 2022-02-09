@@ -53,6 +53,24 @@ class todayPage {
                 }
                 break;
             case "Today":
+                if(TASK_NUMBER == 1){
+                    basePage.Selectors.todayButton().click()
+                    this.Selectors.addTaskIcon().click()
+                    this.Selectors.taskTitleField().type(TASK_NAME)
+                    cy.contains("Add task").click()
+                    this.validateTaskNumber(TASK_NUMBER).should('eq', true)
+                }
+                else{
+                    basePage.Selectors.todayButton().click()
+
+                    for(let i = 1; i <= TASK_NUMBER; i++){
+                        this.Selectors.addTaskIcon().click()
+                        this.Selectors.taskTitleField().type(TASK_NAME)
+                        cy.contains("Add task").click()
+
+                        this.Selectors.taskLabel().eq(-1).invoke('text').should('eq', i + " " + TASK_NAME)
+                    }
+                }
                 break; 
         }
     }
