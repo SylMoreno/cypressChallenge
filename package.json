@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/SylMoreno/cypressChallenge.git"
   },
-  "keywords": [],
+  "keywords": ["cypress", "challenge", "demo"],
   "author": "",
   "license": "ISC",
   "bugs": {
