@@ -1,26 +1,24 @@
-require('dotenv').config()
-
-module.exports = (on, config) => {
+{
     SITE = {
-        SUT_URL: process.env.BASE_URL
+        SUT_URL: Cypress.env('baseUrl.UI')
     },
 
     CREDENTIALS = {
         VALID_USER: {
-            MAIL: process.env.VALID_MAIL,
-        PASSWORD: process.env.VALID_PASSWORD
+            MAIL: Cypress.env('user.VALID_USER'),
+        PASSWORD: Cypress.env('user.VALID_PASSWORD')
     },
         INVALID_USER: {
-            MAIL: "invalid-mail@dummy.com",
-            PASSWORD: "superwongPass00",
+            MAIL: Cypress.env('user.INVALID_USER'),
+            PASSWORD: Cypress.env('user.INVALID_PASSWORD'),
             NULL_FIELD: null
         }
     },
 
     ERROR_MESSAGE = {
-        WRONG_CREDENTIALS: "Wong emailor  password.",
-        MISSING_PASSWORD: "Blank password.",
-        INVALID_EMAIL: "Invalid email address."
+        WRONG_CREDENTIALS: Cypress.env('message.NO_CREDENTIALS'),
+        MISSING_PASSWORD: Cypress.env('message.VALID_MAIL_NO_PASSWORD'),
+        INVALID_CREDENTIALS: Cypress.env('messaage.INVALID_CREDENTIALS')
     }
     
     TASK = {
