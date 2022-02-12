@@ -4,4 +4,5 @@ class welcomePage {
     }
 }
 
-modules.exports = new welcomePage();
+//modules.exports = new welcomePage();
+export default new welcomePage()

@@ -25,4 +25,5 @@ class upcomingPage{
     }
 }
 
-modules.exports = new upcomingPage()
+//modules.exports = new upcomingPage()
+export default new upcomingPage()

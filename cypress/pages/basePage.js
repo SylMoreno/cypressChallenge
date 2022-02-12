@@ -33,4 +33,5 @@ class basePage {
     }
 }
 
-modules.exports = new basePage()
+//modules.exports = new basePage()
+export default new basePage()

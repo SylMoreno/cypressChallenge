@@ -27,4 +27,5 @@ class inboxPage{
     }
 }
 
-modules.exports = new inboxPage()
+//modules.exports = new inboxPage()
+export default new inboxPage()

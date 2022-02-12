@@ -18,4 +18,5 @@ class loginPage {
 
 }
 
-modules.exports = new loginPage()
+//modules.exports = new loginPage()
+export default new loginPage()

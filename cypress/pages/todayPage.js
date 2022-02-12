@@ -76,4 +76,5 @@ class todayPage {
     }
 }
 
-modules.exports = new todayPage()
+//modules.exports = new todayPage()
+export default new todayPage()
