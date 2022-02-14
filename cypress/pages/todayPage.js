@@ -1,9 +1,14 @@
 import basePage from './basePage'
 import inboxPage from './inboxPage'
 
-class todayPage {
+export class todayPage {
+
+    getHeaderTitle(){
+        cy.get('header[data-testid=view_header]').should('contain', "Today")
+        return this
+    }
     Selectors = {
-        headerTitle: () => cy.get('header[data-testid=view_header]'),
+        //headerTitle: () => cy.get('header[data-testid=view_header]'),
 
         //Tasks
         addTaskIcon: () => cy.get('button.plus_add_button'),
@@ -76,5 +81,4 @@ class todayPage {
     }
 }
 
-//modules.exports = new todayPage()
 export default new todayPage()

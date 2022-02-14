@@ -1,22 +1,19 @@
-class loginPage {
-    Selectors = {
-       emailInput: () => cy.get('#mail'),
-       passwordInput: () => cy.get('#password'),
-       submitloginButton: () => cy.get('button').contains("Log in"),
-       errorMessage: () => cy.get('.error_msg')
+export class loginPage {
+
+    clickSubmitButton(){
+        cy.get('button').contains("Log in").click()
+    }
+
+    getErrorMessage(message){
+        cy.get('.error_msg').should('contain', message)
     }
 
     submitLoginForm(username, password){
-        if(username =! null){
-            this.Selectors.emailInput().type(username)
-        }
-        if(password =! null){
-            this.Selectors.passwordInput().type(password)
-        }
-        this.Selectors.submitloginButton().click()
+        cy.get('#email').type(username).invoke('text')
+        cy.get('#password').type(password)
+        this.clickSubmitButton()
     }
 
 }
 
-//modules.exports = new loginPage()
 export default new loginPage()

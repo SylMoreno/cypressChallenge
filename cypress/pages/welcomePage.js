@@ -1,8 +1,8 @@
-class welcomePage {
-    Selectors = {
-        logInButton: () => cy.get('a').contains('Log in')
+export class welcomePage {
+    
+    access() {
+        cy.get('a').contains('Log in').click()
     }
 }
 
-//modules.exports = new welcomePage();
 export default new welcomePage()
