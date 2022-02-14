@@ -12,8 +12,6 @@ describe('Login feature test', () => {
     const MESSAGE = Cypress.env('ERROR_MESSAGE')
 
     beforeEach(() =>{
-        const site = Cypress.env('SITE')
-        cy.visit(site.SUT_URL_UI)
         welcomepage.access()
     })
 

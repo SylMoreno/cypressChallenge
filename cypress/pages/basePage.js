@@ -1,10 +1,22 @@
-class basePage {
+export class basePage {
+
+    clickMenuOption(option){
+        let selection = option
+
+        switch(selection){
+            case "Inbox":
+                cy.get('#filter_inbox').click()
+                break;
+            case "Today":
+                cy.get('#filter_today').click()
+                break;
+            case "Upcoming":
+                cy.get('#filter_upcoming').click()
+                break;
+        }
+    }
+    
     Selectors = {
-        //Menu options
-    inboxButton: () => cy.get('#filter_inbox'),
-    todayButton: () => cy.get('#filter_today'),
-    upcomingButton: () => cy.get('#filter_upcoming'),
-        
         //Projects items
     sectionName: () => cy.get('.sidebar_expansion_panel'),
     plusProjectIcon: () => cy.get('button[aria-label=Add Project]'),

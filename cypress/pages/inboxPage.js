@@ -1,31 +1,40 @@
-import basePage from './basePage'
+import {basePage} from './basePage'
 
-class inboxPage{
-    Selectors = {
-        inboxTaskLabels: () => cy.get('.task_list_item'),
-        dueDateSublabel: () => cy.get('.task_list_item__info_tags'),
+const basepage = new basePage()
 
-        //Task modal options
-        deleteTaskOption: () => cy.get('.icon_menu_item__content').contains("Delete task"),
-        confirmDeleteModal: () => cy.get('button[class=ist_button ist_button_red]').contains("Delete")
+export class inboxPage{
+
+    getInboxTaskLabels(){
+        return cy.get('.task_list_item')
     }
 
+    clickDeleteTaskOption(){
+        cy.get('.icon_menu_item__content').contains("Delete task").click()
+    }
+
+    clickConfirmDeleteModal(){
+        cy.get('button').contains("Delete").click()
+    }
+
+    //dueDateSublabel: () => cy.get('.task_list_item__info_tags'),
+
     deleteAllTasks(){
-        basePage.Selectors.inboxButton().click()
+        basepage.clickMenuOption("Inbox")
 
-        let totalTasks = this.Selectors.inboxTaskLabels.count
-
-        if(totalTasks > 0){
-            do{
-                this.Selectors.inboxTaskLabels().rightClick()
-                this.Selectors.deleteTaskOption().click()
-                this.Selectors.confirmDeleteModal().click()
-
-                totalTasks = this.Selectors.inboxTaskLabels().count
-            } while(totalTasks > 0)
-        }
+        cy.get('li.task_list_item').as('taskLabels')
+        .each(($li) => {
+            if($li.length > 0) {
+                do{
+                cy.get('@taskLabels').eq(0).rightclick({force: true})
+                this.clickDeleteTaskOption()
+                cy.wait(2000)
+                this.clickConfirmDeleteModal()
+                $li = $li.length
+                } while( $li.length > 0)
+            }
+        })
+        cy.wait(2000)
     }
 }
 
-//modules.exports = new inboxPage()
 export default new inboxPage()

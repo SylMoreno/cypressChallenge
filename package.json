@@ -4,7 +4,12 @@
   "description": "This repo is meant to reproduce what was done for QA Bootcamp, but using cypress framework",
   "main": "index.js",
   "scripts": {
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:all:tests": "cypress run --spec cypress/integration/tests/*",
+    "cypress:login:tests": "cypress run --spec cypress/integration/tests/login.spec.js",
+    "cypress:tasks:tests": "cypress run --spec cypress/integration/tests/tasks.spec.js",
+    "cypress:projects:tests": "cypress run --spec cypress/integration/tests/projects.spec.js",
+    "cypress:multibrowser:all:tests": "cypress run --browser chrome,firefox --spec cypress/integration/tests/*"
   },
   "repository": {
     "type": "git",

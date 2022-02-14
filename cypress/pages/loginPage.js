@@ -1,3 +1,5 @@
+import {welcomePage} from './welcomePage'
+
 export class loginPage {
 
     clickSubmitButton(){
@@ -11,6 +13,16 @@ export class loginPage {
     submitLoginForm(username, password){
         cy.get('#email').type(username).invoke('text')
         cy.get('#password').type(password)
+        this.clickSubmitButton()
+    }
+
+    validUserLogin(){
+        const CREDENTIALS = Cypress.env('CREDENTIALS')
+        const welcomepage = new welcomePage()
+
+        welcomepage.access()
+        cy.get('#email').type(CREDENTIALS.VALID_USER.MAIL)
+        cy.get('#password').type(CREDENTIALS.VALID_USER.PASSWORD)
         this.clickSubmitButton()
     }
 
