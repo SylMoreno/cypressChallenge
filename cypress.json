@@ -1,1 +1,64 @@
-{}
+{
+    "env": {
+        "SITE": {
+            "SUT_URL_UI": "https://todoist.com",
+            "SUT_URL_API": "https://api.todoist.com"
+        },
+    
+        "CREDENTIALS": {
+            "VALID_USER": {
+                "MAIL": "",
+                "PASSWORD": ""
+        },
+            "INVALID_USER": {
+                "MAIL": "fakemail@dummy.com",
+                "PASSWORD": "wrongpass",
+                "NULL_FIELD": null
+            }
+        },
+    
+        "ERROR_MESSAGE": {
+            "INVALID_EMAIL": "Invalid email address.",
+            "MISSING_PASSWORD": "Blank password.",
+            "INVALID_CREDENTIALS": "Wrong email or password."
+        },
+        
+        "TASK": {
+            "SINGLE": {
+                "NAME": "Single task",
+                "NUMBER": 1,
+                "DUE": {
+                    "TODAY": "Today",
+                    "TOMORROW": "Tomorrow"
+                }
+            },
+            
+            "MULTIPLE": {
+                "NAME": "Multiple task",
+                "NUMBER": 10,
+                "DUE": {
+                    "TODAY": "Today",
+                    "TOMORROW": "Tomorrow"
+                }
+            }
+        },
+    
+       "PROJECT": {
+            "FAVORITE": {
+                "NAME": "New favorite",
+                "COLOR": "Orange",
+                "IS_FAVORITE": true
+            },
+    
+            "NON_FAVORITE": {
+                "NAME": "New regular",
+                "COLOR": "Red",
+                "IS_FAVORITE": false
+            }
+        }
+        ,
+        "API_TOKEN": ""
+    },
+    "defaultCommandTimeout" : 5000,
+    "pageLoadTimeout": 70000
+}
