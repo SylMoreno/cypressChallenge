@@ -31,15 +31,16 @@ This repo is meant to reproduce what was done for QA Bootcamp, but using cypress
   * Reports
 
 ## Feature testing scripts
-1. Use `run-all-tests` to run all tests, headless mode
-2. Use `login-feature-chrome` to perform all login tests available (chrome browser, headless mode)
-3. Use `login-feature-multibrowser`to perform all login tests with chrome, firefox and safari browsers
-4. Use `add-NewTask-feature` to perform all *create new tasks*' tests requested (chrome browser)
-5. Use `add-NewProject-feature` to perform all *create new project* test requested (chrome browser)
-6. Use `test-smoke` to only run tests with type="smoke"
-7. Use `newman`to run API testing
-8. Use `lint-init`to initialize lint
-9. Use `lint` for perform static analysis
+1. Use `cypress_open` to open cypress test runner
+2. Use `run-all-tests` to run all tests, headless mode
+3. Use `login-feature-chrome` to perform all login tests available (chrome browser, headless mode)
+4. Use `login-feature-multibrowser`to perform all login tests with chrome, firefox and safari browsers
+5. Use `add-NewTask-feature` to perform all *create new tasks*' tests requested (chrome browser)
+6. Use `add-NewProject-feature` to perform all *create new project* test requested (chrome browser)
+7. Use `test-smoke` to only run tests with type="smoke"
+8. Use `newman`to run API testing
+9. Use `lint-init`to initialize lint
+10. Use `lint` for perform static analysis
 
 ## Be aware to create your own .env file pom level. The following constants are used:
 - `BASE_URL=https://www.todoist.com/`
