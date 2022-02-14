@@ -1,5 +1,5 @@
 {
-  "name": "cypressChallenge",
+  "name": "cypress_challenge",
   "version": "1.0.0",
   "description": "This repo is meant to reproduce what was done for QA Bootcamp, but using cypress framework",
   "main": "index.js",
