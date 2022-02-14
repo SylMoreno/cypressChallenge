@@ -1,26 +1,53 @@
-import basepage from './basePage'
+import {basePage} from './basePage'
 
-class projectsPage{
+const basepage = new basePage()
 
-    Selectors = {
-        //Projects details
-        editProjectButton: () => cy.get('div[class=icon_menu_item__content]').contains("Edit project"),
+export class projectsPage{
 
-        //Delete modal selectors
-        projectLabelOptions: () => cy.get('td.menu'),
-        deleteProjectOption: () => cy.get('td[data-track=projects|menu_delete]'),
-        confirmDeleteButton: () => cy.get('button').contains("Delete")
+    clickEditProjectButton(){//project details
+        cy.get('li[role=menuitem]').find('div').contains("Edit project").click()
+        cy.get('div[role=dialog]').invoke('show')
+    }
+    
+    clickDeleteProjectOption(){//modal selector
+        cy.get('td[data-track=projects|menu_delete]').click()
+    }
+
+    clickConfirmDeleteButton(){//modal selector
+        cy.get('button').contains("Delete").click()
+    }
+
+    isNameCorrect(PROJECT_NAME){
+        basepage.getProjectName().invoke('text')
+        .then((name) => {
+            expect(name).to.equal(PROJECT_NAME)
+        })
+    }
+
+    isColorCorrect(PROJECT_COLOR){
+        cy.get('button.color_dropdown_toggle.form_field_control').as('selectedColor')
+        cy.get('@selectedColor').invoke('text')
+        .then((color) => {
+            expect(color).to.equal(PROJECT_COLOR)
+        })
+    }
+
+    isFavoriteCorrect(){
+        basepage.getFavoriteToggle().invoke('class')
+        .then((toggle) => {
+            expect(toggle).to.have.class('reactist_switch--checked')
+        })
     }
 
     deleteProjects(){
-        let count = basepage.Selectors.projectLabel().count
+        let count = basepage.getProjectLabel().count
 
         if(count > 0){
             do{
-                basepage.Selectors.projectLabel().eq(count-1).rightClick()
-                this.Selectors.deleteProjectOption().click()
-                this.Selectors.confirmDeleteButton().click()
-                count = basepage.Selectors.projectLabel.count
+                basepage.getProjectLabel().eq(count-1).rightclick()
+                this.clickDeleteProjectOption()
+                this.clickConfirmDeleteButton()
+                count = basepage.getProjectLabel().count
             } while( count > 0)
         }
     }
@@ -28,10 +55,15 @@ class projectsPage{
     validateProject(PROJECT_NAME, PROJECT_COLOR, isFavorite = false){
         let favFlag = isFavorite
 
-        basepage.Selectors.projectLabel().rightClick()
-        this.Selectors.editProjectButton().click()
+        basepage.getProjectLabel().rightclick()
+        this.clickEditProjectButton()
+        cy.wait(2000)
 
-        let target = {
+        this.isNameCorrect(PROJECT_NAME)
+        this.isColorCorrect(PROJECT_COLOR)
+        this.isFavoriteCorrect()
+
+        /*let target = {
             name: basepage.Selectors.projectName().value,
             color: basepage.Selectors.colorList().innerText,
             isFavorite: basepage.favoriteToggle().hasClass('reactist_switch--checked')
@@ -42,8 +74,8 @@ class projectsPage{
         }
         else {
             return false
-        }
+        }*/
     }
 }
 
-modules.exports = new projectsPage()
+export default new projectsPage()

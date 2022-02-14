@@ -35,5 +35,4 @@ export class upcomingPage{
     }
 }
 
-//modules.exports = new upcomingPage()
 export default new upcomingPage()
