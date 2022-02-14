@@ -20,29 +20,27 @@ This repo is meant to reproduce what was done for QA Bootcamp, but using cypress
 
 ###### Using page-object-model structure, you’ll find the following structure:
 * cypress
-  * data -> As the name indicates, is data who doesn’t change. Is static.
-    * Constants
   * fixtures -> Here are all scripts used to test features.
-  * pages -> CSS Selectors according to the indicated screen.
-  * plugins -> Here you're gonna set your .env
+  * integration
+    * tests -> hre you can find all spec.js files
+  * pages -> actions according to the indicated screen.
   * support
     * commands -> If necessary, all your cypress native custom functions are going to be nested here
     * index -> If necessary, you can put here global configs that could modify Cypress
   * Reports
 
 ## Feature testing scripts
-1. Use `cypress_open` to open cypress test runner
-2. Use `run-all-tests` to run all tests, headless mode
-3. Use `login-feature-chrome` to perform all login tests available (chrome browser, headless mode)
+1. Use `cypress:open` to open cypress test runner
+2. Use `cypress:chrome:all:tests` to run all tests, headless mode
+3. Use `cypress:chrome:login:tests` to perform all login tests available (chrome browser, headless mode)
 4. Use `login-feature-multibrowser`to perform all login tests with chrome, firefox and safari browsers
-5. Use `add-NewTask-feature` to perform all *create new tasks*' tests requested (chrome browser)
-6. Use `add-NewProject-feature` to perform all *create new project* test requested (chrome browser)
-7. Use `test-smoke` to only run tests with type="smoke"
-8. Use `newman`to run API testing
-9. Use `lint-init`to initialize lint
-10. Use `lint` for perform static analysis
+5. Use `cypress:chrome:tasks:tests` to perform all *create new tasks*' tests requested (chrome browser)
+6. Use `cypress:chrome:projects:tests` to perform all *create new project* test requested (chrome browser)
+7. Use `newman`to run API testing
+8. Use `lint-init`to initialize lint
+9. Use `lint` for perform static analysis
 
-## Be aware to create your own .env file pom level. The following constants are used:
-- `BASE_URL=https://www.todoist.com/`
-- `VALID_MAIL=youremail@email.com. (create an account before start)`
-- `VALID_PASSWORD=yourpassword`
+## Be aware to populate your own cypress.json file pom level. The following data is mandatory:
+- `SUT_URL_UI=https://www.todoist.com/`
+- `CREDENTIALS.VALID_USER.MAIL=youremail@email.com. (create an account before start)`
+- `CREDENTIALS.VALID_USER.PASSWORD=yourpassword`
