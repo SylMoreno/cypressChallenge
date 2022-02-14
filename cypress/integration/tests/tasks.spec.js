@@ -2,9 +2,11 @@ import {basePage} from '../../pages/basePage'
 import {loginPage} from '../../pages/loginPage'
 import {todayPage} from '../../pages/todayPage'
 import {inboxPage} from '../../pages/inboxPage'
+import {upcomingPage} from '../../pages/upcomingPage'
 
 const todaypage = new todayPage()
 const basepage = new basePage()
+const upcomingpage = new upcomingPage()
 const taskData = Cypress.env('TASK')
 
 describe('Tasks feature test', () => {
@@ -31,8 +33,9 @@ describe('Tasks feature test', () => {
         todaypage.validateTaskNumber(taskData.MULTIPLE.NUMBER)
     })
 
-    it.only('Should create a new task with TOMORROW as due date', () => {
+    it('Should create a new task with TOMORROW as due date', () => {
         todaypage.addNewTask(taskData.SINGLE.NUMBER, taskData.SINGLE.DUE.TOMORROW, taskData.SINGLE.NAME)
         basepage.clickMenuOption("Upcoming")
+        upcomingpage.validateUpcomingTask(taskData.SINGLE.NAME, taskData.SINGLE.DUE.TOMORROW)
     })
 })

@@ -1,27 +1,37 @@
-class upcomingPage{
+export class upcomingPage{
 
-    Selectors = {
-        taskLabels: () => cy.get('.task_list_item'),
-        editUpcomingTaskButton: () => cy.get('div[class=icon_menu_item__content]').contains("Edit task"),
-        tomorrowTaskName: () => cy.get('div[class=public-DraftStyleDefault-block public-DraftStyleDefault-ltr]'),
-        calendarButton: () => cy.get('span[class=date date_tom]')
+    clickEditUpcomingTaskButton(){
+        cy.get('div[class=icon_menu_item__content]').contains("Edit task").click()
     }
 
-    validateAddedTasks(TASK_NAME, TASK_DUE){
-        this.Selectors.taskLabels().rightClick()
-        this.Selectors.editUpcomingTaskButton().click()
+    isTaskTitleCorrect(TASK_NAME){
+        cy.get('div[role=textbox]')
+        .as('tomorrowTaskName')
 
-        let target = {
-            name: this.Selectors.tomorrowTaskName().innerText,
-            date: this.Selectors.calendarButton().innerText
-        }
+        cy.get('@tomorrowTaskName').invoke('text')
+        .then((name) => {
+            expect(name).to.equal(TASK_NAME)
+            }
+        )
+    }
 
-        if(target.name == TASK_NAME && target.date == TASK_DUE){
-            return true
-        }
-        else{
-            return false
-        }
+    isTaskDueCorrect(TASK_DUE){
+        cy.get('span.date.date_tom')
+        .as('calendarButton')
+
+        cy.get('@calendarButton').invoke('text')
+        .then((date) => {
+            expect(date).to.equal(TASK_DUE)
+        })
+    }
+
+    validateUpcomingTask(TASK_NAME, TASK_DUE){
+        cy.get('.task_list_item').as('taskLabels')
+        cy.get('@taskLabels').rightclick({force:true})
+        this.clickEditUpcomingTaskButton()
+
+        this.isTaskTitleCorrect(TASK_NAME)
+        this.isTaskDueCorrect(TASK_DUE)
     }
 }
 

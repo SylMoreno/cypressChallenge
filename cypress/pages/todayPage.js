@@ -24,7 +24,7 @@ export class todayPage {
     }
 
     selectCalendarTomorrow(){
-        cy.get('span[class=date date_today]').click()
+        cy.get('button').contains("Today").click()
         cy.get('div[class=scheduler-suggestions-item-label]').contains("Tomorrow").click()
     }
 
