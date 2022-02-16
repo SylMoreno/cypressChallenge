@@ -7,8 +7,8 @@
     
         "CREDENTIALS": {
             "VALID_USER": {
-                "MAIL": "silvia.morenomoo@gmail.com",
-                "PASSWORD": "Yuki1992"
+                "MAIL": "",
+                "PASSWORD": ""
         },
             "INVALID_USER": {
                 "MAIL": "fakemail@dummy.com",
@@ -57,7 +57,7 @@
             }
         }
         ,
-        "API_TOKEN": "8782ec52a0183b77f4e06e462fdf680e2603cc01"
+        "API_TOKEN": ""
     },
     "screenshotOnRunFailure": true,
     "defaultCommandTimeout" : 5000,
