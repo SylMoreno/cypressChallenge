@@ -7,8 +7,8 @@
     
         "CREDENTIALS": {
             "VALID_USER": {
-                "MAIL": "",
-                "PASSWORD": ""
+                "MAIL": "silvia.morenomoo@gmail.com",
+                "PASSWORD": "Yuki1992"
         },
             "INVALID_USER": {
                 "MAIL": "fakemail@dummy.com",
@@ -57,10 +57,11 @@
             }
         }
         ,
-        "API_TOKEN": ""
+        "API_TOKEN": "8782ec52a0183b77f4e06e462fdf680e2603cc01"
     },
+    "screenshotOnRunFailure": true,
     "defaultCommandTimeout" : 5000,
-    "pageLoadTimeout": 70000
+    "pageLoadTimeout": 70000,
     "reporter": "cypress-mochawesome-reporter",
     "reporterOptions": {
         "reportDir": "cypress/reports",
