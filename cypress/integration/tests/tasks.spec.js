@@ -23,7 +23,7 @@ describe('Tasks feature test', () => {
         inboxpage.deleteAllTasks()
     })
 
-    it('Should create a new task with TODAY as due date', () => {
+    it('Should create a new task with TODAY as due date', { tags: '@smoke'}, () => {
         todaypage.addNewTask(taskData.SINGLE.NUMBER, taskData.SINGLE.DUE.TODAY, taskData.SINGLE.NAME)
         todaypage.validateTaskLabelTitle(taskData.SINGLE.NAME)
     })
@@ -33,7 +33,7 @@ describe('Tasks feature test', () => {
         todaypage.validateTaskNumber(taskData.MULTIPLE.NUMBER)
     })
 
-    it('Should create a new task with TOMORROW as due date', () => {
+    it('Should create a new task with TOMORROW as due date', { tags: '@smoke'}, () => {
         todaypage.addNewTask(taskData.SINGLE.NUMBER, taskData.SINGLE.DUE.TOMORROW, taskData.SINGLE.NAME)
         basepage.clickMenuOption("Upcoming")
         upcomingpage.validateUpcomingTask(taskData.SINGLE.NAME, taskData.SINGLE.DUE.TOMORROW)

@@ -1,0 +1,165 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 4,
+    "failures": -3,
+    "start": "2022-02-16T07:09:41.640Z",
+    "end": "2022-02-16T07:09:41.663Z",
+    "duration": 23,
+    "testsRegistered": 4,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 3,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4855f4e1-200a-44c2-b4b8-a1011fd85102",
+      "title": "",
+      "fullFile": "cypress/integration/tests/login.spec.js",
+      "file": "cypress/integration/tests/login.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a457711d-4bf8-4e90-971f-650fd76ce8e3",
+          "title": "Login feature test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should be able to log successfully by using valid credentials",
+              "fullTitle": "Login feature test Should be able to log successfully by using valid credentials",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "2e7a318d-ee42-4c40-ada7-826214288110",
+              "parentUUID": "a457711d-4bf8-4e90-971f-650fd76ce8e3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should not be able to log without credentials",
+              "fullTitle": "Login feature test Should not be able to log without credentials",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "a9d65fdc-38cf-4114-bd8c-595afa8a039d",
+              "parentUUID": "a457711d-4bf8-4e90-971f-650fd76ce8e3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should not be able to log with invalid email and valid password",
+              "fullTitle": "Login feature test Should not be able to log with invalid email and valid password",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "bcbe59cb-7a48-4fd9-9943-3cfb466b461f",
+              "parentUUID": "a457711d-4bf8-4e90-971f-650fd76ce8e3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should not be able to log with valid email and invalid password",
+              "fullTitle": "Login feature test Should not be able to log with valid email and invalid password",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "646cb226-1fb4-4524-b69c-2b6959a636aa",
+              "parentUUID": "a457711d-4bf8-4e90-971f-650fd76ce8e3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "2e7a318d-ee42-4c40-ada7-826214288110",
+            "a9d65fdc-38cf-4114-bd8c-595afa8a039d",
+            "bcbe59cb-7a48-4fd9-9943-3cfb466b461f",
+            "646cb226-1fb4-4524-b69c-2b6959a636aa"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/.jsons",
+        "charts": true,
+        "reportPageTitle": "Report",
+        "embeddedScreenshots": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

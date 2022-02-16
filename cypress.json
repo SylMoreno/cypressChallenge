@@ -61,4 +61,11 @@
     },
     "defaultCommandTimeout" : 5000,
     "pageLoadTimeout": 70000
+    "reporter": "cypress-mochawesome-reporter",
+    "reporterOptions": {
+        "reportDir": "cypress/reports",
+        "charts": true,
+        "reportPageTitle": "Report",
+        "embeddedScreenshots": true
+    }
 }

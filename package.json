@@ -9,13 +9,18 @@
     "cypress:chrome:login:tests": "cypress run --browser chrome --spec cypress/integration/tests/login.spec.js",
     "cypress:chrome:tasks:tests": "cypress run --browser chrome --spec cypress/integration/tests/tasks.spec.js",
     "cypress:chrome:projects:tests": "cypress run --browser chrome --spec cypress/integration/tests/projects.spec.js",
-    "cypress:multibrowser:all:tests": "cypress run --browser chrome --browser chrome,firefox --spec cypress/integration/tests/*"
+    "cypress:multibrowser:all:tests": "cypress run --browser chrome --browser chrome,firefox --spec cypress/integration/tests/*",
+    "cypress:smoke:testing": "cypress run --browser chrome --spec 'cypress/integration/tests/*' --env grepTags=@smoke"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SylMoreno/cypressChallenge.git"
   },
-  "keywords": ["cypress", "challenge", "demo"],
+  "keywords": [
+    "cypress",
+    "challenge",
+    "demo"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -23,6 +28,8 @@
   },
   "homepage": "https://github.com/SylMoreno/cypressChallenge#readme",
   "devDependencies": {
-    "cypress": "^9.4.1"
+    "cypress": "^9.4.1",
+    "cypress-grep": "^2.13.1",
+    "cypress-mochawesome-reporter": "^2.3.0"
   }
 }

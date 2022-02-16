@@ -15,7 +15,7 @@ describe('Login feature test', () => {
         welcomepage.access()
     })
 
-    it('Should be able to log successfully by using valid credentials', () => {
+    it('Should be able to log successfully by using valid credentials', { tags: '@smoke'}, () => {
         loginpage.submitLoginForm(CREDENTIALS.VALID_USER.MAIL, CREDENTIALS.VALID_USER.PASSWORD)
         todaypage.getHeaderTitle()
     })

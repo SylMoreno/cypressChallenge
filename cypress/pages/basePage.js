@@ -28,19 +28,19 @@ export class basePage {
     getProjectLabel(){
         cy.get('li[data-type=project_list_item]').as('projectLabel')
 
-        return cy.get('@projectLabel').eq(0)
+        return cy.get('@projectLabel')
     }
 
     getFavoriteProjectLabel(){
-        cy.get('ul[aria-label=Favorites]').find('li[data-type=project_list_item]')
+        cy.get('ul[aria-label=Favorites]').find('li[data-type=project_list_item]').eq(0)
         .as('favoriteProjectLabel')
 
-        return cy.get('@favoriteProjectLabel').eq(0)
+        return cy.get('@favoriteProjectLabel')
     }
 
     getProjectName(){
-        cy.get('input#edit_project_modal_field_name').as('projectName')
-        return cy.get('@projectName')
+        cy.get('input[id=edit_project_modal_field_name]').focus().as('projectName')
+        return cy.get('@projectName').invoke('text')
     }
 
     getFavoriteToggle(){
@@ -48,7 +48,7 @@ export class basePage {
         return cy.get('@favoriteToggle')
     }
 
-    clickPlusPojectIcon(){
+    clickPlusProjectIcon(){
         cy.get('button.adder_icon').invoke('show')
         cy.get('button.adder_icon').click()
     }
@@ -56,24 +56,9 @@ export class basePage {
     clickAddProjectButton(){
         cy.get('button.ist_button.ist_button_red').contains("Add").click()
     }
-    
-    Selectors = {
-        //Projects items
-    sectionName: () => cy.get('.sidebar_expansion_panel'),
-    //plusProjectIcon: () => cy.get('button[aria-label=Add Project]'),
-    //projectLabel: () => cy.get('li[data-type=project_list_item]'),
-    //favoriteProjectLabel: () => cy.get('ul[aria-label=Favorites]').find('li[data-type=project_list_item]'),
-
-        //Projects modals items
-    //projectName: () => cy.get('input#edit_project_modal_field_name'),
-    //colorList: () => cy.get('div.form_field').find('button'),
-    //selectedColorLabel: () => cy.get('span.color_dropdown_select_name'),
-    //favoriteToggle: () => cy.get('.reactist_switch'),
-    //addProjectButton: () => cy.get('button[class=ist_button ist_button_red]').contains("Add")
-    }
 
     createNewProject(PROJECT_NAME, PROJECT_COLOR, isFavorite = false){
-        this.clickPlusPojectIcon()
+        this.clickPlusProjectIcon()
         this.provideProjectName(PROJECT_NAME)
         this.selectProjectColor(PROJECT_COLOR)
 
