@@ -36,7 +36,7 @@ This repo is meant to reproduce what was done for QA Bootcamp, but using cypress
 4. Use `login-feature-multibrowser`to perform all login tests with chrome, firefox and safari browsers
 5. Use `cypress:chrome:tasks:tests` to perform all *create new tasks*' tests requested (chrome browser)
 6. Use `cypress:chrome:projects:tests` to perform all *create new project* test requested (chrome browser)
-7. Use `newman`to run API testing
+7. Use `cypress:smoke:testing` to perform all tests tagged as *smoke* 
 8. Use `lint-init`to initialize lint
 9. Use `lint` for perform static analysis
 
