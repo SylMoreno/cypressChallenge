@@ -10,7 +10,9 @@
     "cypress:chrome:tasks:tests": "cypress run --browser chrome --spec cypress/integration/tests/tasks.spec.js",
     "cypress:chrome:projects:tests": "cypress run --browser chrome --spec cypress/integration/tests/projects.spec.js",
     "cypress:multibrowser:all:tests": "cypress run --browser chrome --browser chrome,firefox --spec cypress/integration/tests/*",
-    "cypress:smoke:testing": "cypress run --browser chrome --spec 'cypress/integration/tests/*' --env grepTags=@smoke"
+    "cypress:smoke:testing": "cypress run --browser chrome --spec 'cypress/integration/tests/*' --env grepTags=@smoke",
+    "lint": "npm install eslint-plugin-cypress --save-dev",
+    "lint-init": "eslint --init"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,7 @@
   "devDependencies": {
     "cypress": "^9.4.1",
     "cypress-grep": "^2.13.1",
-    "cypress-mochawesome-reporter": "^2.3.0"
+    "cypress-mochawesome-reporter": "^2.3.0",
+    "eslint-plugin-cypress": "^2.12.1"
   }
 }

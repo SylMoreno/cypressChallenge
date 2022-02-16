@@ -5,7 +5,7 @@ const basepage = new basePage()
 export class projectsPage{
 
     clickEditProjectButton(){//project details
-        cy.get('div.icon_menu_item__content').contains("Edit project").click({force: true})
+        cy.get('div.icon_menu_item__content').contains("Edit project").click()
         //cy.get('div[role=dialog]').invoke('show')
     }
     
@@ -52,19 +52,14 @@ export class projectsPage{
         }
     }
 
-    validateProject(PROJECT_NAME, PROJECT_COLOR, /*isFavorite = false*/){
-        //let favFlag = isFavorite
+    validateProject(PROJECT_NAME, PROJECT_COLOR){
 
         basepage.getFavoriteProjectLabel().rightclick()
         this.clickEditProjectButton()
-        /*.then(() =>{
             this.isNameCorrect(PROJECT_NAME)
             this.isColorCorrect(PROJECT_COLOR)
             this.isFavoriteCorrect()
-        })*/
-
-        
+        }
     }
-}
 
 export default new projectsPage()
